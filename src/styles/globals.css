@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------
+   Base Layer – Global Defaults
+-------------------------------- */
+@layer base {
+  html {
+    font-family: ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  h1 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply text-gray-700 leading-relaxed;
+  }
+
+  a {
+    @apply text-blue-600 hover:text-blue-700 transition-colors;
+  }
+}
+
+/* -----------------------------
+   Components – Reusable UI
+-------------------------------- */
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-xl bg-white p-6 shadow-sm border border-gray-200;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg
+      px-4 py-2 text-sm font-medium transition-all
+      focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-blue-600 text-white
+      hover:bg-blue-700 focus:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-900
+      hover:bg-gray-200 focus:ring-gray-400;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2
+      text-sm placeholder-gray-400
+      focus:border-blue-500 focus:ring-2 focus:ring-blue-500
+      focus:outline-none;
+  }
+}
+
+/* -----------------------------
+   Utilities – UX Enhancements
+-------------------------------- */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* -----------------------------
+   Selection & Scrollbar
+-------------------------------- */
+::selection {
+  background: rgb(37 99 235);
+  color: white;
+}
+
+/* -----------------------------
+   Dark Mode (ready)
+-------------------------------- */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark .card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark p {
+  @apply text-gray-300;
+}
